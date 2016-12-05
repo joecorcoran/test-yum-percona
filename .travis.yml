@@ -1,0 +1,12 @@
+before_script: echo foo
+script: echo bar
+env:
+  - INSTANCE=default-centos-5
+  - INSTANCE=default-centos-6
+  - INSTANCE=default-centos-7
+  
+matrix:
+ include:
+   - before_script: echo hi
+     script: echo bye
+     env: UNIT_AND_LINT=1
